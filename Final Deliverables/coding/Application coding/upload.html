@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="Static\styles.css" />
+</head>
+
+<body id="predict">
+    <div id="nav">
+        <a class="2" href="upload.html">Predict</a>
+        <a class="1" href="home.html">Home</a>
+    </div>
+
+    <h1>Food Demand Forecasting</h1>
+    <form action="{{ url_for('y_predict')}}" method="post">
+        <select id="home_page">
+              <option>homepage_featured</option>
+              <option>Yes</option>
+              <option>NO</option>
+        </select><br><br>
+        <select id="email">
+            <option>emailer_for_promotion</option>
+            <option>Yes</option>
+            <option>NO</option>
+        </select><br><br>
+        <input type="text" id="area" placeholder="Enter the op_area(2-7)" /><br><br>
+        <select id="cuisine">
+            <option>Cuisine</option>
+            <option>Continental</option>
+            <option>Indian</option>
+            <option>Italy</option>
+            <option>Thai</option>
+        </select><br><br>
+        <input type="text" id="city" placeholder="Enter city_code" /><br><br>
+        <input type="text" id="region" placeholder="Enter region_code" /><br><br>
+        <select id="category">
+            <option>Category</option>
+            <option>Beverages</option>
+            <option>Biryani</option>
+            <option>Desert</option>
+            <option>Extras</option>
+            <option>Fish</option>
+            <option>Other Snacks</option>
+            <option>Pasta</option>
+            <option>Pizza</option>
+            <option>Rice Bowl</option>
+            <option>Salad</option>
+            <option>Sandwich</option>
+            <option>Seafood</option>
+            <option>Soup</option>
+            <option>Starters</option>
+        </select><br><br>
+        <button>Predict</button><br><br>
+    </form>
+
+    {{ prediction_text }}
+
+</body>
+
+</html>
